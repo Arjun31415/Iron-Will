@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin: 1rem;
+  font-weight: 800;
 }
 .nav__items {
   display: flex;
@@ -12,6 +13,16 @@
 .nav__login {
   margin-right: 2rem;
 }
-.nav__item:hover {
+.nav__item:hover,
+.nav__login:hover {
   color: rgba(21, 72, 173);
+}
+.nav__register {
+  background-color: #000;
+  color: #dcdcdc;
+  border-radius: 900rem;
+  padding: 0.5rem;
+}
+.nav__register:hover {
+  color: #1db954;
 }

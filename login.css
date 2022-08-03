@@ -1,7 +1,6 @@
-
 body {
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .login1 {
   height: 100vh;
@@ -33,14 +32,6 @@ body {
   border-radius: 10px;
   pointer-events: none;
 }
-/* .form img {
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
-  width: 100px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-} */
 
 .form .insidelogin {
   position: relative;
@@ -78,7 +69,7 @@ body {
   margin-left: auto;
   border: none;
   outline: none;
-  background: rgba(124, 199, 103);
+  background: #1db954;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -86,4 +77,3 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-/

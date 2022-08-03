@@ -13,7 +13,7 @@ a {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 .feature1__text {
   width: 20%;
@@ -27,6 +27,9 @@ a {
 }
 .feature2__text {
   flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
 }
 .feature2__image {
   flex-grow: 3;
