@@ -10,14 +10,14 @@ a {
 }
 
 .container {
-  margin-top: 10px;
+  margin: 0 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .feature1__text {
   width: 20%;
-  margin-left: auto;
+  margin-left: 1rem;
   margin-right: auto;
   align-items: center;
   flex-grow: 1;
@@ -26,11 +26,12 @@ a {
   flex-grow: 3;
 }
 .feature2__text {
-  flex-grow: 1;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
 }
 .feature2__image {
-  flex-grow: 3;
+  align-items: flex-end;
+  /* flex-grow: 3; */
+  margin-right: 0;
 }
