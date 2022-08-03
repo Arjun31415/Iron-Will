@@ -3,97 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./nav.css" />
+
     <title>Fitness</title>
   </head>
   <body>
+    <!-- Arjun Prashanth -->
+    <!-- 20BCE1029-->
+
+
     <section>
-      <h1>Lemon Fitness</h1>
+      <nav class="nav">
+        <ul class="nav__items">
+          <a href="/">
+          <li class="nav__item"> Home </li>
+          </a>
+          <a href="#">
+          <li class="nav__item"> About </li>
+          </a>
+          <a href="#">
+          <li class="nav__item"> Pricing </li>
+          </a>
+        </ul>
+        <div class="nav__actions">
+          <a href="/Login.html" class="nav__login"> Login </a>
+          <a class="nav__register" href="#"> Register </a>
+        </div>
+         </nav>
+    </section>
+    <section>
+      <h1>Iron Will</h1>
       <img src="./assets/images/mascot.webp" alt="mascot" />
     </section>
     <section>
-      <h1>WELCOME TO LEMONFIT</h1>
+      <h1>WELCOME TO Iron Will</h1>
       <p>
-        LemonFit has been Forging Elite Fitness™ since 2001 and can be used to
+        Iron Will has been Forging Elite Fitness™ since 2001 and can be used to
         accomplish any goal, from improved health to better performance. The
         program works for everyone — people who have never worked out and those
-        who have trained for years share equally in the benefits of LemonFit.
+        who have trained for years share equally in the benefits of Iron Will.
       </p>
     </section>
     <section>
-      <iframe
+      <!-- <iframe
         allowfullscreen
         allow="autoplay"
         src="./assets/videos/gym_promo.mp4"
-      >
+      > -->
       </iframe>
     </section>
-    <section>
-      <form method="post" action="/signup" name="signup">
-        <table border="1">
-          <tr>
-            <th>Your name</th>
-            <td><input type="text" name="name" placeholder="Name" /></td>
-          </tr>
-          <tr>
-            <th>Enter Email</th>
-            <td><input type="text" name="email" placeholder="Email" /></td>
-          </tr>
-          <tr>
-            <th>Enter your password</th>
-            <td>
-              <input type="text" name="password" placeholder="Password" />
-            </td>
-          </tr>
-          <tr>
-            <th>Repeat your password</th>
-            <td>
-              <input
-                type="text"
-                name="passwordConfirm"
-                placeholder="Repeat you password"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"><input type="submit" value="Sign Up" /></td>
-          </tr>
-        </table>
-      </form>
-    </section>
-    <section>
-      <!-- create a definition list for gym stuff  -->
-      <dl>
-        <dt>
-          <h2>LemonFit Gym</h2>
-        </dt>
-        <dd>
+    
+
+    <!-- Manas Tiwari -->
+    <!-- 20BCE1018 -->
+
+    <section style="margin-top:30px">
+      <div class="container">
+        <div class="feature1__image">
+          <a>
+          <img src="assets/images/gym2.webp" width="80%" />
+          </a>
+        </div>
+        <div class="feature1__text">
+          <h1 >Boost Your Productivity</h1>
           <p>
-            It is a place where you can get fit with the best quality machines.
+            Get access to the arsenal of machines and use them to 
+            boost your productivity!
           </p>
-        </dd>
-        <dt>
-          <h2>Gym Equipment</h2>
-        </dt>
-        <dd>
-          <p>Latest and well maintained equipment ready to be used.</p>
-        </dd>
-        <dt>
-          <h2>Gym Routine</h2>
-        </dt>
-        <dd>
-          <p>Flexible and customizable workout routine based on your goals.</p>
-        </dd>
-        <dt>
-          <h2>Gym Trainer</h2>
-        </dt>
-        <dd>
-          <p>
-            Highly trained and experienced gym trainer who will monitor you and
-            help you achieve your goals.
-          </p>
-        </dd>
-        <dt>
-      </dl>
+          <ul>
+            <li>Access world-class machines</li>
+            <li>Disturbance free environment</li>
+            <li>24x7 Security</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+          <div class="feature2__text">
+            <div>
+            <h1>Get World Class Mentors</h1>
+            <p>
+             Our group of mentors are among the best in the world!
+            </p>
+          </div>
+          <div>
+            <ul>
+              <li>Get personalised support</li>
+              <li>Get after-gym support from our mentors</li>
+            </ul>
+          </div>
+          </div>
+          <div class="feature2__image"  >
+            <img src="assets/images/gym3.jpg" width="80%"/>
+          </div>
+      </div>
+      <div class="container">
+          <div class="feature1__image">
+
+              <a>
+            <img src="assets/images/gym4.jpg" width="80%" />
+              </a>
+          </div>
+          <div class="feature1__text">
+            <h1 >Get Desired Results</h1>
+            <p>
+              See yourself achieving your resolutions!
+             </p>
+             <ul>
+               <li>Get into shape with our fitness plan</li>
+               <li>Improve your diet with our dart chart</li>
+             </ul>
+          </div>
+      </div>
+      <div class="container" >
+          <div class="feature2__text">
+            <h1>Rediscover Yourself</h1>
+            <p>
+              Find the new you within you!
+             </p>
+             <ul>
+               <li>Improve your standard of living</li>
+               <li>Say no to all physical pains</li>
+             </ul>
+          </div>
+          <div class="feature2__image">
+            <img src="assets/images/gym5.jpg" width="80%" />
+          </div>
+      </div>
     </section>
   </body>
 </html>
