@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.nav__items {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.nav__item,
+.nav__login {
+  margin-right: 2rem;
+}
+.nav__item:hover {
+  color: rgba(21, 72, 173);
+}

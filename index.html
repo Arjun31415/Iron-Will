@@ -3,11 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./nav.css" />
+
     <title>Fitness</title>
   </head>
   <body>
     <section>
-      <h1>Lemon Fitness</h1>
+      <nav class="nav">
+        <ul class="nav__items">
+          <a href="/">
+          <li class="nav__item"> Home </li>
+          </a>
+          <a href="#">
+          <li class="nav__item"> About </li>
+          </a>
+          <a href="#">
+          <li class="nav__item"> Pricing </li>
+          </a>
+        </ul>
+        <div class="nav__actions">
+          <a href="/Login.html" class="nav__login"> Login </a>
+          <a class="nav__register"> Register </a>
+        </div>
+         </nav>
+    </section>
+    <section>
+      <h1>Iron Will</h1>
       <img src="./assets/images/mascot.webp" alt="mascot" />
     </section>
     <section>
@@ -20,11 +42,11 @@
       </p>
     </section>
     <section>
-      <iframe
+      <!-- <iframe
         allowfullscreen
         allow="autoplay"
         src="./assets/videos/gym_promo.mp4"
-      >
+      > -->
       </iframe>
     </section>
     <section>
@@ -61,39 +83,56 @@
       </form>
     </section>
     <section>
-      <!-- create a definition list for gym stuff  -->
-      <dl>
-        <dt>
-          <h2>LemonFit Gym</h2>
-        </dt>
-        <dd>
+      <div class="container">
+        <div class="feature1__image">
+          <a>
+          <img src="assets/images/gym2.webp" width="80%" />
+          </a>
+        </div>
+        <div class="feature1__text">
+          <h1 >Boost Your Productivity</h1>
           <p>
-            It is a place where you can get fit with the best quality machines.
+            Get access to the arsenal of machines and use them to 
+            boost your productivity!
           </p>
-        </dd>
-        <dt>
-          <h2>Gym Equipment</h2>
-        </dt>
-        <dd>
-          <p>Latest and well maintained equipment ready to be used.</p>
-        </dd>
-        <dt>
-          <h2>Gym Routine</h2>
-        </dt>
-        <dd>
-          <p>Flexible and customizable workout routine based on your goals.</p>
-        </dd>
-        <dt>
-          <h2>Gym Trainer</h2>
-        </dt>
-        <dd>
-          <p>
-            Highly trained and experienced gym trainer who will monitor you and
-            help you achieve your goals.
-          </p>
-        </dd>
-        <dt>
-      </dl>
+          <ul>
+            <li>Access world-class machines</li>
+            <li>Disturbance free environment</li>
+            <li>24x7 Security</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+          <div class="feature2__text">
+            <h1>Get World Class Mentors</h1>
+          </div>
+          <div class="feature2__image"  >
+              <a>
+            <img src="assets/images/gym3.jpg" width="80%"/>
+              </a>
+          </div>
+      </div>
+      <div class="container">
+          <div class="feature1__image">
+
+              <a>
+            <img src="assets/images/gym4.jpg" width="80%" />
+              </a>
+          </div>
+          <div class="feature1__text">
+            <h1 >Get Desired Results</h1>
+          </div>
+      </div>
+      <div class="container" >
+          <div ">
+            <h1>Rediscover Yourself</h1>
+          </div>
+          <div>
+              <a>
+            <img src="assets/images/gym5.jpg" width="80%" />
+              </a></div>
+          
+      </div>
     </section>
   </body>
 </html>
