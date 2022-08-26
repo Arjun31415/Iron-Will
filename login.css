@@ -79,5 +79,36 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+/* .submit-btn {
+  animation: rotation 2s infinite linear;
+} */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.ll {
+  position: relative;
+  animation: translation 2s infinite;
+}
+@keyframes translation {
+  from {
+    left: 100px;
+  }
+  to {
+    left: 0px;
+  }
+  from {
+    right: 0px;
+  }
+  to {
+    right: 100px;
+  }
+} 
 /* K S S Nikhil
-                                  20BCE1307 */
+                                  20BCE1307 */ */
+

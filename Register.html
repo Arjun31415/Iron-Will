@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>Fitness</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <div class="login1">
+      <form class="form" name="registerForm">
+        <h2 style="color: white; text-align: center; margin-bottom: 1rem">
+          Register
+        </h2>
+        <div class="insidelogin">
+          <input
+            type="text"
+            placeholder="Register"
+            name="loginUser"
+            id="loginUser"
+            required
+          />
+        </div>
+        <div class="insidelogin">
+          <input
+            type="password"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="insidelogin">
+          <input
+            type="password"
+            name="loginPasswordRepeat"
+            id="loginPasswordRepeat"
+            placeholder="Repeat Password"
+            required
+          />
+        </div>
+        <input
+          type="submit"
+          value="Sign Up"
+          class="submit-btn"
+          onclick="validateForm(event)"
+        />
+      </form>
+    </div>
+    <script>
+      function validateForm(e) {
+        e.preventDefault();
+        let useName = document.getElementById("loginUser").value;
+        if (!useName) {
+          alert("Invalid Username");
+        }
+        let password = document.getElementById("loginPassword").value;
+        let password2 = document.getElementById("loginPasswordRepeat").value;
+        if (password != password2) {
+          alert("Passwords do not match");
+          return;
+        }
+        let out = document.getElementById("result");
+        if (password.length < 4) {
+          out.innerHTML = "Password is Weak";
+          out.style.border = "thick solid red";
+        } else if (password.length < 6) {
+          out.innerHTML = "Password is Good";
+          out.style.border = "thick solid #ffcc00";
+        } else if (password.length < 8) {
+          out.innerHTML = "Password is Strong";
+          out.style.border = "thick solid #99cc33";
+        } else {
+          out.innerHTML = "Password is Very Strong";
+          out.style.border = "thick solid #339900";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -26,3 +26,7 @@
 .nav__register:hover {
   color: #1db954;
 }
+#pricing:after {
+  content: "\2304";
+  display: inline-block;
+}
