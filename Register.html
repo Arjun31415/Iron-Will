@@ -35,7 +35,7 @@
       e.preventDefault();
       let userName = document.getElementById("loginUser").value;
       if (!userName) {
-        alert("Invalid Email");
+        alert("Enter an Email");
         return;
       }
       if (!validateEmail(userName)) {
@@ -67,7 +67,7 @@
       return String(email)
         .toLowerCase()
         .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          /^([a-zA-Z]+\d*\.*)+@([a-zA-Z]+\.)+((com|edu|ac\.in))$/
         );
     };
   </script>
