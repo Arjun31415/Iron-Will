@@ -25,6 +25,27 @@ a {
 .feature1__image {
   flex-grow: 3;
 }
+.yeet {
+  position: relative;
+  animation: myAni 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes myAni {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 200px;
+  }
+  50% {
+    top: 100px;
+  }
+  75% {
+    top: 200px;
+  }
+  100% {
+    top: 0px;
+  }
+}
 .feature2__text {
   margin-left: auto;
   margin-right: auto;
