@@ -24,16 +24,23 @@ h1 {
   justify-content: space-around;
 }
 
-.feature1__text {
+.feature1__text,
+.feature2__text,
+.feature3__text {
   flex: 2;
+  margin-left: 20px;
 }
 
-.feature1__image {
+.feature1__image,
+.feature2__image,
+.feature3__image {
   flex: 8;
   margin-right: 30px
 }
 
-.feature1__image>img {
+.feature1__image>img,
+.feature2__image>img,
+.feature3__image>img {
   display: block;
   border: 0;
   width: 100%;
@@ -64,18 +71,6 @@ h1 {
   100% {
     top: 0px;
   }
-}
-
-.feature2__text {
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-}
-
-.feature2__image {
-  align-items: flex-end;
-  /* flex-grow: 3; */
-  margin-right: 0;
 }
 
 .main-brand {
