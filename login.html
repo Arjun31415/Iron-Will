@@ -1,70 +1,54 @@
-<!-- /* K S S Nikhil
-                                  20BCE1307 */  -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="./login.css" />
-    <link rel="stylesheet" href="./styles.css" />
 
-    <title>Fitness</title>
-  </head>
-  <body>
-    <div class="login1">
-      <form class="form" name="form1" onsubmit="validateForm()">
-        <h2
-          class="ll"
-          style="color: white; text-align: center; margin-bottom: 1rem;"
-        >
-          Login
-        </h2>
-        <div class="insidelogin">
-          <input
-            type="text"
-            name="loginUser"
-            placeholder="User Name"
-            id="loginUser"
-            required
-          />
-          <label for="loginUser"></label>
-        </div>
-        <div class="insidelogin">
-          <input
-            type="password"
-            name="loginPassword"
-            id="loginPassword"
-            placeholder="Password"
-            required
-          />
-          <label for="loginPassword"></label>
-        </div>
-        <input type="submit" value="Login" class="submit-btn" />
-      </form>
-    </div>
-    <!-- Code for validation -->
-    <script>
-      function validateForm() {
-        var name = document.form1.loginUser.value;
-        var password = document.form1.loginPassword.value;
-        if (name == null || name == "") {
-          alert("Name can't be blank");
-        }
-        if (password.length < 3) {
-          alert("Password must be at least 3 characters long.");
-          return false;
-        } else if (password.length <= 5) {
-          alert("Password is weak.");
-          return false;
-        } else if (password.length < 8) {
-          alert("Password is medium strenght");
-          return false;
-        } else {
-          alert(" Password is Very Strong");
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <title>Fitness</title>
+</head>
+
+<body>
+  <div class="login1">
+    <form class="form" name="form1" onsubmit="validateForm()">
+      <h2 class="ll" style="color: white; text-align: center; margin-bottom: 1rem;">
+        Login
+      </h2>
+      <div class="insidelogin">
+        <input type="text" name="loginUser" placeholder="User Name" id="loginUser" required />
+        <label for="loginUser"></label>
+      </div>
+      <div class="insidelogin">
+        <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" required />
+        <label for="loginPassword"></label>
+      </div>
+      <input type="submit" value="Login" class="submit-btn" />
+    </form>
+  </div>
+  <!-- Code for validation -->
+  <script>
+    function validateForm() {
+      var name = document.form1.loginUser.value;
+      var password = document.form1.loginPassword.value;
+      if (name == null || name == "") {
+        alert("Name can't be blank");
       }
-    </script>
-  </body>
+      if (password.length < 3) {
+        alert("Password must be at least 3 characters long.");
+        return false;
+      } else if (password.length <= 5) {
+        alert("Password is weak.");
+        return false;
+      } else if (password.length < 8) {
+        alert("Password is medium strenght");
+        return false;
+      } else {
+        alert(" Password is Very Strong");
+      }
+    }
+  </script>
+</body>
+
 </html>
-<!-- /* K S S Nikhil
-                                  20BCE1307 */ */ -->
