@@ -1,35 +1,54 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-.nav__link{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* background-color: #333;; */
-}
-.nav__item{
-    list-style: none;
-    text-decoration: none;
-    margin-right:auto;
-    float: left;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-}
-.nav__item a{
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+body {
+	font-family: Montserrat, sans-serif;
+    background-color: #eee;
+	
+	display: flex;
+	flex-direction: column;
 
+	min-height: 100vh;
+	margin: 0;
 }
-.right-end{
-    float:right;
+
+h3 {
+	margin: 10px 0;
 }
-.nav__item a:hover:not(.active) {
-    color: #2489f4;
+
+h6 {
+	margin: 5px 0;
+	text-transform: uppercase;
 }
-.active {
-    color: #04AA6D !important;
+
+p {
+	font-size: 14px;
+	line-height: 27px;
+}
+
+.master_container {
+
+    margin-top: 3%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.card-container {
+	background-color: #ccc;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #000000;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	position: relative;
+	width: 90%;
+	max-width: 100%;
+	text-align: center;
+    font-size: 24px;
+}
+
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
 }

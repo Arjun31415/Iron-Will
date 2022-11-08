@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    padding: 0;
+	font-family: Montserrat, sans-serif;
+    margin: 0;
+}
+.nav__link{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333;; */
+}
+.nav__item{
+    list-style: none;
+    text-decoration: none;
+    margin-right:auto;
+    float: left;
+
+}
+.nav__item a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+.right-end{
+    float:right;
+}
+.nav__item a:hover:not(.active) {
+    color: #2489f4;
+}
+.active {
+    color: #04AA6D !important;
+}

@@ -3,6 +3,31 @@
 	try
 	{
 
+	// function to show tables in database using sqli
+	function show_tables($sql)
+	{
+		// connect to database
+		$conn = new mysqli("localhost", "root", "", "Trainer");
+		// check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		// execute query
+		$result = $conn->query($sql);
+		// check if query executed successfully
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				echo "Table: " . $row["Tables_in_Trainer"] . "<br>";
+			}
+		} else {
+			echo "0 results";
+		}
+		// close connection
+		$conn->close();
+	}
+
+
 	function create_sql_table($conn, $table_name)
 	{
 		$sql = "CREATE TABLE $table_name (
