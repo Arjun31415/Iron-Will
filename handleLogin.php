@@ -23,8 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
         // if password is correct then send success else send error
         if(user_exists($email)){
             if(check_password_match($email, $password)){
-                // send success
-                echo "User in database";
 
                 // start user session
                 $_SESSION['email'] = $email;   

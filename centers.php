@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="profile.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Will - Profile</title>
+    <title>Iron Will - Trainers</title>
 </head>
 <body>
     <?php 
@@ -17,15 +17,13 @@ session_start();
 <nav>
     <ul class="nav__link">
         <li class="nav__item"><a href="./index.html">Home</a></li>
-        <li class="nav__item"><a href="profile.php" class="active">Profile</a></li>
-        <li class="nav__item"><a href="trainers.php">Trainers</a></li>
-        <li class="nav__item"><a href="centers.php" >Centers</a></li>
+        <li class="nav__item"><a href="profile.php" >Profile</a></li>
+        <li class="nav__item"><a href="trainers.php" >Trainers</a></li>
+        <li class="nav__item"><a href="centers.php" class="active">Centers</a></li>
         <li class="nav__item"><a href="exercises.php" >Exercises</a></li>
         <li class="nav__item right-end"><a href="logout.php">Logout</a></li>
     </ul>
 </nav>
-<?php
-    echo "<h1> Welcome To the family: ". $_SESSION['name'] ."</h1>";
-?>
+
 </body>
 </html>

@@ -5,12 +5,12 @@ session_start();
 
 // check if session exists
 // TODO: uncomment the following lines
-// if ($_SESSION['email']) {
-//     // if exists (user is already logged in)
-//     // redirect to profile.php
-//     header( 'Location: profile.php' );
-//     die();
-// }
+if ($_SESSION['email']) {
+    // if exists (user is already logged in)
+    // redirect to profile.php
+    header( 'Location: profile.php' );
+    die();
+}
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,6 @@ session_start();
 </head>
 
 <body>
-
   <div class="login1">
   <?php
     $succ=$_GET['success'];
@@ -50,5 +49,4 @@ session_start();
     </form>
   </div>
 </body>
-
 </html>
