@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
             header("Location: Login.php?error=Invalid Email");
             die();
         }
+
         include 'sql_func.php';
         // check if user exist in database using email
         // if user exist then check password

@@ -62,22 +62,23 @@
         $username = "root";
         $password = "";
         $dbname = "Trainer";
-        $sql = "SELECT * FROM users WHERE email like '$email";
+        $sql = "SELECT * FROM User WHERE email like '$email'";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                return $row["name"];
+            }
+        } else {
+            echo "0 results";
+        }
         $conn->close();
-        if($result->num_rows == 0 )
-        {
-            return "No name found";
-        }
-        else
-        {
-            return "Name found";
-        }
     }
 
     // check user hashed password from User table

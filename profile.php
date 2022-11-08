@@ -11,11 +11,14 @@ session_start();
 </head>
 <body>
     <?php 
+
+    include 'sql_func.php';
+
     print_r($_SESSION);
 ?>
 <?php
 
-    echo "<h1> Welcome To the family: ". $_SESSION['email'] ."</h1>";
+    echo "<h1> Welcome To the family: ". $_SESSION['name'] ."</h1>";
 ?>
 </body>
 </html>
