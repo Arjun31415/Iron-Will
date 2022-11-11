@@ -40,6 +40,9 @@ if ($_SESSION['email']) {
         <input type="text" name="phoneNo" id="phoneNo" placeholder="Phone Number" required />
       </div>
       <div class="insidelogin">
+        <input type="text" name="gender" id="gender" placeholder="Gender" required />
+      </div>
+      <div class="insidelogin">
         <input type="password" name="password" id="loginPassword" placeholder="Password" required />
       </div>
       <div class="insidelogin">

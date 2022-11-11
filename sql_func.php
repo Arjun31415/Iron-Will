@@ -7,7 +7,7 @@
 	function show_tables($sql)
 	{
 		// connect to database
-		$conn = new mysqli("localhost", "root", "", "Trainer");
+		$conn = new mysqli("localhost", "root", "", "Iron-Will");
 		// check connection
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -48,11 +48,11 @@
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "Trainer";
+		$dbname = "Iron-Will";
 		$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
-		}
+		} 
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			echo "<table border='1'><tr>";
@@ -86,7 +86,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Trainer";
+        $dbname = "Iron-Will";
         $sql = "SELECT * FROM User WHERE email like '$email'";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -112,7 +112,7 @@
         $servername = "localhost";
         $username = "root";
         $dbpass = "";
-        $dbname = "Trainer";
+        $dbname = "Iron-Will";
         $conn = new mysqli($servername, $username, $dbpass, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -138,7 +138,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Trainer";
+        $dbname = "Iron-Will";
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -158,7 +158,7 @@
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "Trainer";
+		$dbname = "Iron-Will";
 		$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -177,7 +177,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Trainer";
+        $dbname = "Iron-Will";
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -197,7 +197,7 @@
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "Trainer";
+		$dbname = "Iron-Will";
 		$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -234,7 +234,7 @@
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "Trainer";
+		$dbname = "Iron-Will";
 		$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);

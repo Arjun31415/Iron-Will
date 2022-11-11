@@ -12,6 +12,7 @@ try {
     $fullName       = $_POST['fullName'];
     $phoneNo        = $_POST['phoneNo'];
     $repeatPassword = $_POST['repeatPassword'];
+    $gender         = $_POST['gender'];
     
     // check if passwords are same
     if ($password != $repeatPassword) {
@@ -51,6 +52,10 @@ try {
     // include php file
     include 'sql_func.php';
     
+    // Generate random 5-digit values for x_coord and y_coord
+    $x_coord = rand(0, 99999);
+    $y_coord = rand(0, 99999);
+
     // hash password with bcrypt algorithm
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
     
@@ -64,8 +69,9 @@ try {
         }
 
         // insert user into database
-        $sql = "INSERT INTO User (id, email, password, name, phone) VALUES ($id,'$email', '$hashedPassword', '$fullName', '$phoneNo')";
-    
+        $sql = "INSERT INTO User (id, email, password, name , phone, gender, x_coord, y_coord) 
+        VALUES ('$id', '$email', '$hashedPassword', '$fullName', '$phoneNo', '$gender', '$x_coord', '$y_coord')"; 
+
         insert_into_table($sql);
         
         //describe user table
