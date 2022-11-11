@@ -1,5 +1,12 @@
 <?php
 session_start();
+if ($_SESSION['email'] == NULL) {
+    // if exists (user is already logged in)
+    // redirect to profile.php
+    header( 'Location: index.html' );
+    die();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +81,15 @@ session_start();
 
             <br>
 
+            <?php
+
+                // get user allocated center id from allocation table
+                
+
+            ?>
+
             <div class="photo-card">
-                <div class="photo-background"></div>
+                <div class="photo-background" style="background:url('https://i.pinimg.com/originals/a0/75/3d/a0753d8e3cfc1bf71cf3a2f0ef2c783e.jpg')"></div>
                 <div class="photo-details">
                     <h1>Trainer</h1>
                     <p>I'm pretty new to photography, but was able to land this shot earlier today. I think it looks

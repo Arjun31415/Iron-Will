@@ -37,7 +37,6 @@ p {
 }
 
 .photo-background {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/25776/yosemite.jpg");
   background-position: center;
   background-size: cover;
   border-top-left-radius: 10px;

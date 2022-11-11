@@ -4,7 +4,6 @@ session_start();
 <?php
 
 // check if session exists
-// TODO: uncomment the following lines
 if ($_SESSION['email']) {
     // if exists (user is already logged in)
     // redirect to profile.php

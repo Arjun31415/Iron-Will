@@ -33,7 +33,7 @@ session_start();
     </div>
     <section>
         <?php
-        
+
         $sql = "SELECT * FROM Center";
         $result = query_table($sql);
 
@@ -42,9 +42,10 @@ session_start();
         while ($row = mysqli_fetch_assoc($result)) {
             $centers[] = array(
                 "location" => $row['location'],
-                "hours" => $row['active_gours'],
+                "hours" => $row['active_hours'],
                 "PhNo" => $row['phone'],
                 "email" => $row['email'],
+                "image" => $row['image'],
             );
         }
 
@@ -52,14 +53,18 @@ session_start();
         {
             $card = "<div class='item'> 
             <div class='details'>
+            <div class='image'>
+            <img class=\"round\" src={$center['image']} alt=\"user\" />   
+            </div>
+            <div class='details_text'> 
             <h1>" .
                 $center['location'] .
                 "</h1> 
-                    <p>" . $center['PhNo'] .
+                    <p>Phone Number : " . $center['PhNo'] .
                 "</p>
-                    <p>Hours: " .
-                $center["hours"] . "</p><p>" .
-                $center["email"] . "</p></div></div>";
+                    <p>Active Hours: " .
+                $center["hours"] . "</p><p>Email : " .
+                $center["email"] . "</p></div></div> </div>";
             return $card;
         }
         // generate cards for each center

@@ -75,12 +75,10 @@ session_start();
             </div>";
             return $div;
         }
-
         // display all trainers
         foreach ($trainers as $trainer) {
             echo generateTrainerDetails($trainer);
         }
-        
         ?>
     </div>
 
