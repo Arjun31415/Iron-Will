@@ -6,7 +6,6 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="trainers.css" />
     <link rel="stylesheet" href="nav_bar.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +57,6 @@ session_start();
         foreach ($trainers as $key => $trainer) {
             $trainers[$key]['center'] = get_center_location($trainers[$key]['center']);
         }
-        // create a function to display trainer details
 
         function generateTrainerDetails($trainer)
         {

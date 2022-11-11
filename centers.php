@@ -27,35 +27,27 @@ session_start();
             <li class="nav__item right-end"><a href="logout.php">Logout</a></li>
         </ul>
     </nav>
+    <div class="title">Our Centers</div>
+    <div class="buttons">
+        <button class="list-view on"><i class="fa fa-bars"></i></button>
+    </div>
     <section>
         <?php
-        // create dummy centers array with location, active hours, emails, PhNo, and trainer
-        $centers = array(
-            array(
-                "location" => "Gurgaon",
-                "hours" => "8:00 AM - 8:00 PM",
-                "email" => "iron.will.gurgaon@example.com",
-                "PhNo" => "9876543210",
-            ),
-            array(
-                "location" => "Delhi",
-                "hours" => "9:00 AM - 9:00 PM",
-                "email" => "iron.will.delhi@gmail.com",
-                "PhNo" => "9876543211",
-            ),
-            array(
-                "location" => "Noida",
-                "hours" => "10:00 AM - 10:00 PM",
-                "email" => "iron.will.Noida@gmail.com",
-                "PhNo" => "9876543212",
-            ),
-            array(
-                "location" => "Faridabad",
-                "hours" => "11:00 AM - 11:00 PM",
-                "email" => "iron.will.faridabad@gmail.com",
-                "PhNo" => "9876543213",
-            ),
-        );
+        
+        $sql = "SELECT * FROM Center";
+        $result = query_table($sql);
+
+        // make a trainer associative array with name,center assigned,phNo,gender,email from sql result
+        $centers = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $centers[] = array(
+                "location" => $row['location'],
+                "hours" => $row['active_gours'],
+                "PhNo" => $row['phone'],
+                "email" => $row['email'],
+            );
+        }
+
         function generateCenterCard($center)
         {
             $card = "<div class='item'> 
