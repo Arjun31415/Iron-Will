@@ -1,7 +1,6 @@
 <?php
 
-	try
-	{
+try {
 
 	// function to show tables in database using sqli
 	function show_tables($sql)
@@ -52,27 +51,25 @@
 		$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
-		} 
+		}
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			echo "<table border='1'><tr>";
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				foreach($row as $key => $value)
-				{
-					echo "<th>".$key."</th>";
+			while ($row = $result->fetch_assoc()) {
+				foreach ($row as $key => $value) {
+					echo "<th>" . $key . "</th>";
 				}
 				echo "</tr>";
 				break;
 			}
 			do {
 				echo "<tr>";
-				foreach($row as $key => $value)
-				{
-					echo "<td>".$value."</td>";
+				foreach ($row as $key => $value) {
+					echo "<td>" . $value . "</td>";
 				}
 				echo "</tr>";
-			} while($row = $result->fetch_assoc());
+			} while ($row = $result->fetch_assoc());
 			echo "</table>";
 		} else {
 			echo "0 results";
@@ -80,78 +77,78 @@
 		$conn->close();
 	}
 
-    //get name of user from email
-    function get_name($email)
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "Iron-Will";
-        $sql = "SELECT * FROM User WHERE email like '$email'";
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                return $row["name"];
-            }
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
-    }
+	//get name of user from email
+	function get_name($email)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$sql = "SELECT * FROM User WHERE email like '$email'";
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				return $row["name"];
+			}
+		} else {
+			echo "0 results";
+		}
+		$conn->close();
+	}
 
-    // check user hashed password from User table
-    function check_password_match($email, $password)
-    {
-        $servername = "localhost";
-        $username = "root";
-        $dbpass = "";
-        $dbname = "Iron-Will";
-        $conn = new mysqli($servername, $username, $dbpass, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $sql = "SELECT password FROM User WHERE email = '$email'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                $hashedPassword = $row["password"];
-            }
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
-        return password_verify($password, $hashedPassword);
-    }
+	// check user hashed password from User table
+	function check_password_match($email, $password)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$dbpass = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $dbpass, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT password FROM User WHERE email = '$email'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				$hashedPassword = $row["password"];
+			}
+		} else {
+			echo "0 results";
+		}
+		$conn->close();
+		return password_verify($password, $hashedPassword);
+	}
 
 
-     // check if user does not exist
-    function user_exists($email)
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "Iron-Will";
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $sql = "SELECT * FROM User WHERE email = '$email'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            return true;
-        } else {
-            return false;
-        }
-        $conn->close();
-    }
+	// check if user does not exist
+	function user_exists($email)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM User WHERE email = '$email'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+		$conn->close();
+	}
 
 	function insert_into_table($sql)
 	{
@@ -171,26 +168,26 @@
 		$conn->close();
 	}
 
-    // check if id already exists in User table
-    function id_exists($id)
-    {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "Iron-Will";
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        $sql = "SELECT * FROM User WHERE id = '$id'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            return true;
-        } else {
-            return false;
-        }
-        $conn->close();
-    }
+	// check if id already exists in User table
+	function id_exists($id)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM User WHERE id = '$id'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+		$conn->close();
+	}
 
 	function describe_table($sql)
 	{
@@ -206,22 +203,20 @@
 		if ($result->num_rows > 0) {
 			echo "<table border='1'><tr>";
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				foreach($row as $key => $value)
-				{
-					echo "<th>".$key."</th>";
+			while ($row = $result->fetch_assoc()) {
+				foreach ($row as $key => $value) {
+					echo "<th>" . $key . "</th>";
 				}
 				echo "</tr>";
 				break;
 			}
 			do {
 				echo "<tr>";
-				foreach($row as $key => $value)
-				{
-					echo "<td>".$value."</td>";
+				foreach ($row as $key => $value) {
+					echo "<td>" . $value . "</td>";
 				}
 				echo "</tr>";
-			} while($row = $result->fetch_assoc());
+			} while ($row = $result->fetch_assoc());
 			echo "</table>";
 		} else {
 			echo "0 results";
@@ -243,22 +238,20 @@
 		if ($result->num_rows > 0) {
 			echo "<table border='1'><tr>";
 			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				foreach($row as $key => $value)
-				{
-					echo "<th>".$key."</th>";
+			while ($row = $result->fetch_assoc()) {
+				foreach ($row as $key => $value) {
+					echo "<th>" . $key . "</th>";
 				}
 				echo "</tr>";
 				break;
 			}
 			do {
 				echo "<tr>";
-				foreach($row as $key => $value)
-				{
-					echo "<td>".$value."</td>";
+				foreach ($row as $key => $value) {
+					echo "<td>" . $value . "</td>";
 				}
 				echo "</tr>";
-			} while($row = $result->fetch_assoc());
+			} while ($row = $result->fetch_assoc());
 			echo "</table>";
 		} else {
 			echo "0 results";
@@ -266,12 +259,10 @@
 		$conn->close();
 	}
 
-	}
-	catch(Exception $e)
-	{
-		echo "error!!"."<br>";
-		echo "Error: " . $e->getMessage();
-	}
+} catch (Exception $e) {
+	echo "error!!" . "<br>";
+	echo "Error: " . $e->getMessage();
+}
 
 
 ?>
