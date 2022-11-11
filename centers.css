@@ -22,6 +22,31 @@ body {
     padding-right: 3%;
 }
 
+button {
+    height: 36px;
+    width: 40px;
+    margin-left: 4px;
+    font-size: 24px;
+    color: orange;
+    text-align: center;
+    line-height: 1.4;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 0px 1px 2px #bbb;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 3px #666;
+}
+
+button.on {
+    color: white;
+    background-color: #ccc;
+}
+
 .wrapper {
     max-width: 92%;
     width: 900px;
@@ -67,6 +92,14 @@ h2:hover {
     cursor: pointer;
 }
 
+span {
+    font-size: 24px;
+}
+
+span.price {
+    color: orange;
+}
+
 .list .item {
     width: 100%;
     margin: 0 auto 20px;
@@ -81,4 +114,43 @@ h2:hover {
     max-width: 66%;
     margin-top: 4%;
     margin-left: 1%;
+}
+
+.grid .item {
+    width: 32%;
+    margin: 0 2% 20px 0;
+    float: left;
+    text-align: center;
+}
+
+.grid .item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.grid img {
+    padding-top: 0;
+    max-width: 90%;
+    margin: 0 auto;
+    float: none;
+}
+
+.grid h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.grid span {
+    display: inline-block;
+    margin-top: -6px;
+    font-size: 19px;
+}
+
+.grid .details {
+    float: none;
+    max-width: 90%;
+    margin: -20px auto 0;
+}
+
+.grid .details p {
+    margin-top: 8px;
 }

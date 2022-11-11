@@ -142,12 +142,12 @@ try {
 		}
 		$sql = "SELECT * FROM User WHERE email = '$email'";
 		$result = $conn->query($sql);
+		$conn->close();
 		if ($result->num_rows > 0) {
 			return true;
 		} else {
 			return false;
 		}
-		$conn->close();
 	}
 
 	function insert_into_table($sql)
@@ -181,14 +181,37 @@ try {
 		}
 		$sql = "SELECT * FROM User WHERE id = '$id'";
 		$result = $conn->query($sql);
+		$conn->close();
 		if ($result->num_rows > 0) {
 			return true;
 		} else {
 			return false;
 		}
-		$conn->close();
 	}
 
+	// function to get Center location from center id	
+	function get_center_location($center_id)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM Center WHERE id = '$center_id'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				return $row["location"];
+			}
+		} else {
+			echo "0 results";
+		}
+		$conn->close();
+	}
 	function describe_table($sql)
 	{
 		$servername = "localhost";
@@ -236,23 +259,7 @@ try {
 		}
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
-			echo "<table border='1'><tr>";
-			// output data of each row
-			while ($row = $result->fetch_assoc()) {
-				foreach ($row as $key => $value) {
-					echo "<th>" . $key . "</th>";
-				}
-				echo "</tr>";
-				break;
-			}
-			do {
-				echo "<tr>";
-				foreach ($row as $key => $value) {
-					echo "<td>" . $value . "</td>";
-				}
-				echo "</tr>";
-			} while ($row = $result->fetch_assoc());
-			echo "</table>";
+			return $result;
 		} else {
 			echo "0 results";
 		}
@@ -263,6 +270,4 @@ try {
 	echo "error!!" . "<br>";
 	echo "Error: " . $e->getMessage();
 }
-
-
 ?>

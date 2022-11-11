@@ -3,10 +3,8 @@
 body {
 	font-family: Montserrat, sans-serif;
     background-color: #eee;
-	
 	display: flex;
 	flex-direction: column;
-
 	min-height: 100vh;
 	margin: 0;
 }
@@ -54,4 +52,58 @@ p {
 	width: 250px;
 	height: 250px;
 
+}
+.trainer-wrapper {
+    max-width: 92%;
+    width: 900px;
+    margin: 10px auto 40px;
+    padding: 20px 20px 0;
+    background-color: #ddd;
+    font-family: Roboto;
+    position: relative;
+    overflow: hidden;
+}
+.trainer-item {
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px #bbb;
+}
+.trainer-list .trainer-item {
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.trainer-list img {
+    max-width: 30%;
+}
+.trainer-list .trainer-details {
+    float: left;
+    max-width: 66%;
+    margin-top: 4%;
+    margin-left: 1%;
+}
+.trainer-list img {
+    float: left;
+    max-height: 60%;
+    max-width: 60%;
+    padding: 1.2%;
+	margin-right: 10%;
+	height: 30% !important;
+	width: 30% !important;
+	margin-bottom:10px;
+}
+.trainer-image{
+		/* center the image vertically */
+		display: block;
+		margin-top: 10px;
+		margin-left:10px;
+}
+.trainer-list p{
+	/* left align the text */
+	text-align: left;
+	margin-bottom: 0px;
+}
+.trainer-details h2{
+	margin-bottom: 0.3em;
 }

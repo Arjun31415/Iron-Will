@@ -39,33 +39,50 @@ session_start();
     </div>
     <div class="wrapper list">
         <?php
-        // create a dummy trainer associative array with name,center assigned,phNo,gender,email
-        $trainers = array(
-            array("name" => "Trainer 1", "center" => "Center 1", "phNo" => 123456789, "gender" => 'M', "email" => "isuck@example.com"),
-            array("name" => "Trainer 2", "center" => "Center 2", "phNo" => 123456789, "gender" => 'F', "email" => "booboo@example.com"),
-            array("name" => "Trainer 3", "center" => "Center 3", "phNo" => 123456789, "gender" => 'M', "email" => "123@vit.com"),
-            array("name" => "Trainer 4", "center" => "Center 4", "phNo" => 123456789, "gender" => 'F', "email" => "aaaa@example.com")
-        );
+
+        $sql = "SELECT * FROM Trainer";
+        $result = query_table($sql);
+
+        // make a trainer associative array with name,center assigned,phNo,gender,email from sql result
+        $trainers = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $trainers[] = array(
+                "name" => $row['name'],
+                "center" => $row['c_id'],
+                "phNo" => $row['phone'],
+                "gender" => $row['gender'],
+                "email" => $row['email'],
+            );
+        }
+
+        foreach ($trainers as $key => $trainer) {
+            $trainers[$key]['center'] = get_center_location($trainers[$key]['center']);
+        }
         // create a function to display trainer details
+
         function generateTrainerDetails($trainer)
         {
-            $img=$trainer['gender']=='M'?'https://randomuser.me/api/portraits/men/13.jpg':'https://randomuser.me/api/portraits/women/5.jpg';
+
+            $rand = rand(0, 99);
+            $img = $trainer['gender'] == 'm' ? 'https://randomuser.me/api/portraits/men/' . $rand . '.jpg' : 'https://randomuser.me/api/portraits/women/' . $rand . '.jpg';
             $div = "<div class='item'>
             <div class='image'>
             <img class=\"round\" src=$img alt=\"user\" />   
             </div>
-        <div class='details'>
-        <h2>" . $trainer['name'] . "</h2>
-        <p> Phone No: " . $trainer['phNo'] . "</p> <p>Email: " . $trainer['email'] . "</p>
-        <p>Center: " . $trainer['center'] . "</p>
-        </div>
-        </div>";
+            <div class='details'>
+            <h2>" . $trainer['name'] . "</h2>
+            <p> Phone No: " . $trainer['phNo'] . "</p> <p>Email: " . $trainer['email'] . "</p>
+            <p>Center: " . $trainer['center'] . "</p>
+            </div>
+            </div>";
             return $div;
         }
+
         // display all trainers
         foreach ($trainers as $trainer) {
             echo generateTrainerDetails($trainer);
         }
+        
         ?>
     </div>
 
