@@ -160,11 +160,7 @@ try {
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		if ($conn->query($sql) === TRUE) {
-			echo "New record created successfully";
-		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
-		}
+		$conn->query($sql);
 		$conn->close();
 	}
 
@@ -187,6 +183,32 @@ try {
 		} else {
 			return false;
 		}
+	}
+
+	// get uid from email from User table
+	function get_uid($email)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$sql = "SELECT * FROM User WHERE email like '$email'";
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				return $row["id"];
+			}
+		} else {
+			echo "0 results";
+		}
+		$conn->close();
 	}
 
 	// function to get Center location from center id	
@@ -260,8 +282,6 @@ try {
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			return $result;
-		} else {
-			echo "0 results";
 		}
 		$conn->close();
 	}
