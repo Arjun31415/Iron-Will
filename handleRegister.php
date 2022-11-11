@@ -1,9 +1,11 @@
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     // send forbidden
     header("HTTP/1.0 403 Forbidden");
     die();
 }
+
 try {
     
     // validate form data
@@ -14,6 +16,12 @@ try {
     $repeatPassword = $_POST['repeatPassword'];
     $gender         = $_POST['gender'];
     
+    // check if gender is either 'm' or 'f' else return back with error
+    if ($gender != 'm' && $gender != 'f') {
+        header("Location: Register.php?error:Enter 'm' or 'f' for Gender");
+        die();
+    }
+
     // check if passwords are same
     if ($password != $repeatPassword) {
         // redirect to register page  with error message
@@ -82,6 +90,7 @@ try {
         header("Location: Login.php?success=Account Created Successfully");
 
         die();
+
     } else {
         // redirect to register page  with error message
         header("Location: Register.php?error=Email already exists");
@@ -94,6 +103,5 @@ catch (Exception $e) {
     echo "Error: " . $e->getMessage();
     die();
 }
-
 
 ?>

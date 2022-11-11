@@ -61,6 +61,8 @@ session_start();
                     </div>
                 </div>
             </div>
+        </div>
+        
             <br>
 
             <div class="photo-card">
