@@ -9,12 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 try {
 
     // validate form data
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $password = $_POST['password'];
     $fullName = $_POST['fullName'];
     $phoneNo = $_POST['phoneNo'];
     $repeatPassword = $_POST['repeatPassword'];
-    $gender = $_POST['gender'];
+    $gender = strtolower($_POST['gender']);
 
     // check if gender is either 'm' or 'f' else return back with error
     if ($gender != 'm' && $gender != 'f') {

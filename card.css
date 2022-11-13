@@ -90,18 +90,31 @@ p {
 .photo-meta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.375em;
 }
 .photo-meta .equipment,
 .photo-meta .resolution {
   width: 48.75%;
+  margin-bottom: 10px;
 }
-.photo-meta .equipment ul,
+.photo-meta
 .photo-meta .resolution ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   font-size: 87.5%;
+}
+
+.resolution h4, .equipment h4
+{
+  font-size: 90%;
+}
+
+.equipment ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 75.5%;
 }
 
 .photo-tags ul {

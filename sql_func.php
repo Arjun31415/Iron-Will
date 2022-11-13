@@ -280,10 +280,79 @@ try {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		$result = $conn->query($sql);
+		$conn->close();
 		if ($result->num_rows > 0) {
 			return $result;
 		}
+		return NULL;
+	}
+
+	// function that returns the trainer ids of all trainer in the center id
+	function get_trainer_ids($center_id)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM Trainer WHERE c_id = '$center_id'";
+		$result = $conn->query($sql);
 		$conn->close();
+		if ($result->num_rows > 0) {
+			// output data of each row
+			$trainer_ids = array();
+			while ($row = $result->fetch_assoc()) {
+				array_push($trainer_ids, $row["id"]);
+			}
+			return $trainer_ids;
+		} 
+		return NULL;
+	}
+	
+	// given a trainer id get all the details
+	function get_trainer_details($trainer_id)
+	{
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "Iron-Will";
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM Trainer WHERE id = '$trainer_id'";
+		$result = $conn->query($sql);
+		$conn->close();
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while ($row = $result->fetch_assoc()) {
+				return $row;
+			}
+		} 
+		return NULL;
+	}
+	// given an array of trainer ids get all details in a associative array
+	function get_all_trainer_details($trainer_ids)
+	{
+		$all_trainer_details = array();
+		foreach ($trainer_ids as $trainer_id) {
+			$trainer_details = get_trainer_details($trainer_id);
+			array_push($all_trainer_details, $trainer_details);
+		}
+		return $all_trainer_details;
+	}
+	// given a center id, get all trainer details in a associative array
+	function get_all_trainer_details_from_center($center_id)
+	{
+		$trainer_ids = get_trainer_ids($center_id);
+		if ($trainer_ids == NULL) {
+			return NULL;
+		}
+		$all_trainer_details = get_all_trainer_details($trainer_ids);
+		return $all_trainer_details;
 	}
 
 } catch (Exception $e) {

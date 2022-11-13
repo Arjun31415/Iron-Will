@@ -24,7 +24,6 @@ session_start();
             <li class="nav__item"><a href="profile.php">Profile</a></li>
             <li class="nav__item"><a href="trainers.php" class="active">Trainers</a></li>
             <li class="nav__item"><a href="centers.php">Centers</a></li>
-            <li class="nav__item"><a href="exercises.php">Exercises</a></li>
             <li class="nav__item right-end"><a href="logout.php">Logout</a></li>
         </ul>
     </nav>

@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     {
         $email = $_POST['email'];
         $password = $_POST['password'];
-
         //validate email 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // redirect to register page  with error message
@@ -20,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
         include 'sql_func.php';
         $uid = get_uid($email);
-
         // check if user exist in database using email
         // if user exist then check password
         // if password is correct then send success else send error

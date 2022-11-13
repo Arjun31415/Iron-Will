@@ -2,7 +2,7 @@
 
 body {
 	font-family: Montserrat, sans-serif;
-    background-color: #eee;
+	background-color: #eee;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -25,7 +25,7 @@ p {
 
 .master_container {
 
-    margin-top: 3%;
+	margin-top: 3%;
 	align-items: center;
 	display: flex;
 	justify-content: center;
@@ -34,7 +34,7 @@ p {
 .card-container {
 	background-color: #ccc;
 	border-radius: 5px;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
 	color: #000000;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -42,7 +42,7 @@ p {
 	width: 90%;
 	max-width: 100%;
 	text-align: center;
-    font-size: 24px;
+	font-size: 24px;
 }
 
 .card-container .round {
@@ -53,57 +53,144 @@ p {
 	height: 250px;
 
 }
+
 .trainer-wrapper {
-    max-width: 92%;
-    width: 900px;
-    margin: 10px auto 40px;
-    padding: 20px 20px 0;
-    background-color: #ddd;
-    font-family: Roboto;
-    position: relative;
-    overflow: hidden;
+	max-width: 92%;
+	width: 900px;
+	margin: 10px auto 40px;
+	padding: 20px 20px 0;
+	background-color: #ddd;
+	font-family: Roboto;
+	position: relative;
+	overflow: hidden;
+	margin-top: 20px;
 }
+
 .trainer-item {
-    background-color: #fff;
-    overflow: hidden;
-    border-radius: 2px;
-    box-shadow: 0px 1px 3px #bbb;
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 2px;
+	box-shadow: 0px 1px 3px #bbb;
 }
+
 .trainer-list .trainer-item {
-    width: 100%;
-    margin: 0 auto 20px;
+	width: 100%;
+	margin: 0 auto 20px;
 }
 
 .trainer-list img {
-    max-width: 30%;
+	max-width: 30%;
 }
+
 .trainer-list .trainer-details {
-    float: left;
-    max-width: 66%;
-    margin-top: 4%;
-    margin-left: 1%;
+	float: left;
+	max-width: 66%;
+	margin-top: 4%;
+	margin-left: 1%;
 }
+
 .trainer-list img {
-    float: left;
-    max-height: 60%;
-    max-width: 60%;
-    padding: 1.2%;
+	float: left;
+	max-height: 60%;
+	max-width: 60%;
+	padding: 1.2%;
 	margin-right: 10%;
 	height: 30% !important;
 	width: 30% !important;
-	margin-bottom
 }
-.trainer-image{
-		/* center the image vertically */
-		display: block;
-		margin-top: 10px;
-		margin-left:10px;
+
+.trainer-image {
+	/* center the image vertically */
+	display: block;
+	margin-top: 10px;
+	margin-left: 10px;
 }
-.trainer-list p{
+
+.trainer-list p {
 	/* left align the text */
 	text-align: left;
 	margin-bottom: 0px;
 }
-.trainer-details h2{
+
+.trainer-details h2 {
 	margin-bottom: 0.3em;
+}
+
+/* style the trainer choosing form */
+.trainer-form {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.trainer-form input[type="radio"] {
+	/* hide the radio button */
+	display: none;
+}
+
+.trainer-form label {
+	/* style the label */
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.trainer-form input[type="radio"]:checked+label {
+	/* style the label when the radio button is checked */
+	background-color: #ddd;
+}
+
+.trainer-form label:hover {
+	/* style the label when the mouse is over it */
+	background-color: #ddd;
+}
+
+/* style the h2 tag in the form, center it */
+.trainer-form h2 {
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	font-size: 2em;
+	color: #000000;
+}
+
+/* style the trainer-form-footer which consists of action buttons, which are present at the right end of the form */
+.trainer-form-footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* style the buttons */
+.trainer-form-footer input {
+	margin: 10px;
+	padding: 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+/* on hover scale it up */
+.trainer-form-footer input:hover {
+	transform: scale(1.1);
+}
+
+.trainer-form .trainer-wrapper p {
+	color: #000000;
+}
+
+.reset_trainer input {
+	margin: 10px;
+	padding: 10px;
+	background-color: #eee;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px
+}
+.reset_trainer input:hover {
+	transform: scale(1.1);
 }
