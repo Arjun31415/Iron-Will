@@ -8,13 +8,23 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 
 try {
 
-    // validate form data
+    // convert data to string
+    $email = (string)$email;
+    $password = (string)$password;
+    $fullName = (string)$fullName;
+    $phoneNo = (string)$phoneNo;
+    $repeatPassword = (string)$repeatPassword;
+    $gender = (string)$gender;
+    
     $email = strtolower($_POST['email']);
     $password = $_POST['password'];
     $fullName = $_POST['fullName'];
     $phoneNo = $_POST['phoneNo'];
     $repeatPassword = $_POST['repeatPassword'];
     $gender = strtolower($_POST['gender']);
+    
+    
+
 
     // check if gender is either 'm' or 'f' else return back with error
     if ($gender != 'm' && $gender != 'f') {

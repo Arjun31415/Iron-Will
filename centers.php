@@ -10,7 +10,7 @@ session_start();
     <link rel="stylesheet" href="nav_bar.css" />
     <link rel="stylesheet" href="centers.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Will - Trainers</title>
+    <title>Iron Will - Centers</title>
 </head>
 
 <body>

@@ -8,6 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
 }
     try
     {
+
+        // convert data to string
+        $email = (string)$email;
+        $password = (string)$password;
+
         $email = $_POST['email'];
         $password = $_POST['password'];
         //validate email 
